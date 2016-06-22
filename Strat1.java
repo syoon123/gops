@@ -4,7 +4,6 @@ public class Strat1 extends Player {
 	super();
     }
     public int makeMove(){
-	_hand.remove(_hand.indexOf(_prize));
-	return _prize;
+	return _hand.remove(_hand.indexOf(_prize));
     }
 }

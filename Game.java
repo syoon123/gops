@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.lang.Math;
 public class Game {
     //inst vars
     private Player _p1, _p2, _r;
@@ -7,7 +9,7 @@ public class Game {
     public Game(Player p1, Player p2) {
 	_p1 = p1;
 	_p2 = p2;
-	_r = new  RandomPlayer();
+	_r = new RandomPlayer();
 	_prize = 0;
 	_deck = new ArrayList<Integer>();
 	for (int i=1; i<14; i++) _deck.add(i);
@@ -24,7 +26,7 @@ public class Game {
 	int move2 = _p2.makeMove();
 	int move3 = _r.makeMove();
 	if (!(move1 == move2 || move2 == move3 || move1 == move3)) {
-	    int max = Math.max(move1, move2, move3);
+	    int max = Math.max(Math.max(move1, move2), move3);
 	    if (max == move1)
 		_p1.setScore(_p1.getScore() + _prize);
 	    else if (max == move2)
