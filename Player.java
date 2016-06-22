@@ -3,7 +3,7 @@ public abstract class Player {
 
     //inst vars
     ArrayList<Integer> _hand;
-    int _score;
+    int _score, _prize;
 
     //methods
     public Player() {
@@ -11,6 +11,7 @@ public abstract class Player {
 	    _hand.add(i);
 	}
 	_score = 0;
+	_prize = 0;
     }
     
     public String toString() {
@@ -28,7 +29,9 @@ public abstract class Player {
     public ArrayList<Integer> getHand() {
 	return _hand;
     }
-
+    public void setPrize(int p) {
+	_prize = p;
+    }
     public abstract int makeMove();
     
 }
