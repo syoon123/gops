@@ -26,6 +26,10 @@ public abstract class Player {
 	return _score;
     }
 
+    public void setScore(int a) {
+	_score += a;
+    }
+
     public ArrayList<Integer> getHand() {
 	return _hand;
     }
