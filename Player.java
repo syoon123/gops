@@ -1,3 +1,4 @@
+import java.util.*;
 public abstract class Player {
 
     //inst vars
@@ -5,8 +6,15 @@ public abstract class Player {
     int _score;
 
     //methods
+    public Player() {
+	for(int i=1; i<14; i++) {
+	    _hand.add(i);
+	}
+	_score = 0;
+    }
+    
     public String toString() {
-	String retStr;
+	String retStr="";
 	for (Integer i : _hand) {
 	    retStr = i + " ";
 	}
