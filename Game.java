@@ -29,11 +29,11 @@ public class Game {
 	if (!(move1 == move2 || move2 == move3 || move1 == move3)) {
 	    int max = Math.max(Math.max(move1, move2), move3);
 	    if (max == move1)
-		_p1.setScore(_p1.getScore() + _prize);
+		_p1.setScore( _prize);
 	    else if (max == move2)
-		_p2.setScore(_p2.getScore() + _prize);
+		_p2.setScore( _prize);
 	    else
-		_r.setScore(_r.getScore() + _prize);
+		_r.setScore(_prize);
 	}	    
     }
     public void run() {
