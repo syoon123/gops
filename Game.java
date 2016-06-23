@@ -42,5 +42,8 @@ public class Game {
 	results();
     }
     public void results() {
+	System.out.println(_p1.getScore());
+	System.out.println(_p2.getScore());
+	System.out.println(_r.getScore());
     }
 }
