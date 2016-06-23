@@ -17,6 +17,7 @@ public class Game {
     //accessors
     public void setPrize() {
 	_prize = _deck.remove((int)(Math.random()*_deck.size()));
+	//_prize = (int)(Math.random() * 13) + 1;
 	_p1.setPrize(_prize);
 	_p2.setPrize(_prize);	
     }
