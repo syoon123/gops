@@ -7,6 +7,7 @@ public abstract class Player {
 
     //methods
     public Player() {
+	_hand = new ArrayList<Integer>();
 	for(int i=1; i<14; i++) {
 	    _hand.add(i);
 	}
