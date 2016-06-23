@@ -1,5 +1,5 @@
-//test strategy: matches bid
-public class Strat1 extends Player {
+//test strategy: matches bid + 1
+public class Strat2 extends Player {
     public Strat1() {
 	super();
     }
