@@ -17,8 +17,8 @@ public abstract class Player {
     
     public String toString() {
 	String retStr="";
-	for (Integer i : _hand) {
-	    retStr = i + " ";
+	for (int i=0; i<_hand.size(); i++) {
+	    retStr += _hand.get(i).toString() + ", ";
 	}
 	return retStr;
     }
