@@ -55,6 +55,13 @@ public class Game {
 	    System.out.println
 		("The random player put down a " + move3 + ".");
 	    System.out.println();
+	    System.out.println
+		("Player 1's score is " + _p1.getScore() + ".");
+	    System.out.println
+		("Player 2's score is " + _p2.getScore() + ".");
+	    System.out.println
+		("The random player's score is " + _r.getScore() + ".");
+	    System.out.println();
 	}
     }
     public void run() {
