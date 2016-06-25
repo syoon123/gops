@@ -32,6 +32,7 @@ public class Game {
 	    System.out.println("The random player has these cards left:");
 	    System.out.println(_r);
 	    System.out.println();
+	    System.out.println("The prize is " + _prize + ".");
 	}
 	int move1 = _p1.makeMove();
 	int move2 = _p2.makeMove();
