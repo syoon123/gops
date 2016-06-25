@@ -26,6 +26,12 @@ public class UI {
 
     public void turn() {
 	setPrize();
+	System.out.println();
+	System.out.println("The computer has these cards left:");
+	System.out.println(_comp);
+	System.out.println("The random player has these cards left:");
+	System.out.println(_r);
+	System.out.println();
 	int move1 = _comp.makeMove();
 	int move2 = _r.makeMove();	
 	int move3 = _player.makeMove();
@@ -38,6 +44,13 @@ public class UI {
 	    else
 		_player.setScore(_prize);
 	}
+	System.out.println
+	    ("You put down a " + move3 + ".");
+	System.out.println
+	    ("The computer put down a " + move1 + ".");
+	System.out.println
+	    ("The random player put down a " + move2 + ".");
+	System.out.println();
 	results();
     }
 
@@ -55,6 +68,7 @@ public class UI {
 	    ("The Computer's score is " + _comp.getScore() + ".");
 	System.out.println
 	    ("Your score is " + _player.getScore() + ".");
+	System.out.println();
     }
 
     public static void main(String[] args) {
