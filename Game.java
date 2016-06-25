@@ -26,13 +26,13 @@ public class Game {
 	    System.out.println();
 	    System.out.println("Player 1 has these cards left:");
 	    System.out.println(_p1);
-	    System.out.println();
 	    System.out.println("Player 2 has these cards left:");
 	    System.out.println(_p2);
 	    System.out.println("The random player has these cards left:");
 	    System.out.println(_r);
 	    System.out.println();
 	    System.out.println("The prize is " + _prize + ".");
+	    System.out.println();
 	}
 	int move1 = _p1.makeMove();
 	int move2 = _p2.makeMove();
@@ -47,6 +47,7 @@ public class Game {
 	    _r.setScore(_prize);
 	}
 	if (_p1 instanceof User || _p2 instanceof User) {
+	    System.out.println();
 	    System.out.println
 		("Player 1 put down a " + move1 + ".");
 	    System.out.println

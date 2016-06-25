@@ -5,7 +5,7 @@ public class Driver {
 	System.out.println("1. User" + "\n" + "2. x" + "\n" + "3. x+1");
 	int strat1 = Keyboard.readInt();
 	System.out.println("Please type in the integer corresponding to the strategy for Player 2.");
-	System.out.println("1. User" + "\n" + "2. x" + "3. x+1");
+	System.out.println("1. User" + "\n" + "2. x" + "\n"  + "3. x+1");
 	int strat2 = Keyboard.readInt();
 	Player p1, p2;
 	if (strat1 == 1)  p1 = new User();
