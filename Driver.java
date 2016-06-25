@@ -2,7 +2,7 @@ import cs1.Keyboard;
 public class Driver {
     public static void main(String[] args) {
 	System.out.println("Please type in the integer corresponding to the strategy for Player 1.");
-	System.out.println("1. User" + "\n" + "2. x" + "3. x+1");
+	System.out.println("1. User" + "\n" + "2. x" + "\n" + "3. x+1");
 	int strat1 = Keyboard.readInt();
 	System.out.println("Please type in the integer corresponding to the strategy for Player 2.");
 	System.out.println("1. User" + "\n" + "2. x" + "3. x+1");

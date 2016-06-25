@@ -22,7 +22,10 @@ public class Game {
     }
     public void turn() {
 	setPrize();
-	if (_p1 instanceof User) {
+	if (_p1 instanceof User || _p2 instanceof User) {
+	    System.out.println();
+	    System.out.println("Player 1 has these cards left:");
+	    System.out.println(_p1);
 	    System.out.println();
 	    System.out.println("Player 2 has these cards left:");
 	    System.out.println(_p2);
@@ -42,9 +45,9 @@ public class Game {
 	else if (move3 > move1 && move3 > move2) {
 	    _r.setScore(_prize);
 	}
-	if (_p1 instanceof User) {
+	if (_p1 instanceof User || _p2 instanceof User) {
 	    System.out.println
-		("You put down a " + move1 + ".");
+		("Player 1 put down a " + move1 + ".");
 	    System.out.println
 		("Player 2 put down a " + move2 + ".");
 	    System.out.println
@@ -60,7 +63,7 @@ public class Game {
     }
     public void results() {
 	System.out.println
-	    ("Your score is " + _p1.getScore() + ".");
+	    ("Player 1's score is " + _p1.getScore() + ".");
 	System.out.println
 	    ("Player 2's score is " + _p2.getScore() + ".");
 	System.out.println
