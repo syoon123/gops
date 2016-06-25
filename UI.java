@@ -35,14 +35,14 @@ public class UI {
 	int move1 = _comp.makeMove();
 	int move2 = _r.makeMove();	
 	int move3 = _player.makeMove();
-	if (!(move1 == move2 || move2 == move3 || move1 == move3)) {
-	    int max = Math.max(Math.max(move1, move2), move3);
-	    if (max == move1)
-		_comp.setScore( _prize);
-	    else if (max == move2)
-		_r.setScore( _prize);
-	    else
-		_player.setScore(_prize);
+        if (move1 > move2 && move1 > move3) {
+	    _comp.setScore(_prize);
+	}
+	else if (move2 > move1 && move2 > move3) {
+	    _r.setScore(_prize);
+	}
+	else if (move3 > move1 && move3 > move2) {
+	    _player.setScore(_prize);
 	}
 	System.out.println
 	    ("You put down a " + move3 + ".");
