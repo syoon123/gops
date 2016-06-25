@@ -10,9 +10,9 @@ public class Driver {
 	if (strat1 == 1) Player p1 = new User();
 	else if (strat1 == 2) p1 = new Strat1();
 	else if (strat1 == 3) p1 = new Strat2();
-	if (strat2 == 1) Player p1 = new User();
-	else if (strat2 == 2) p1 = new Strat1();
-	else if (strat2 == 3) p1 = new Strat2();
+	if (strat2 == 1) Player p2 = new User();
+	else if (strat2 == 2) p2 = new Strat1();
+	else if (strat2 == 3) p2 = new Strat2();
 	Game game = new Game(p1, p2);
 	System.out.println("How many times do you want the game to run?");
 	int n = Keyboard.readInt();
