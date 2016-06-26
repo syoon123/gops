@@ -20,9 +20,9 @@ public class Driver {
 	    else p2 = new Strat2();
 	    Game game = new Game(p1, p2);
 	    game.run();
+	}
 	*/
 	roundRobin(0);
-	}
     }
 
     public static Player initStrat(int s) {
