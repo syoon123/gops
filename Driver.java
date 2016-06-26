@@ -1,4 +1,6 @@
 import cs1.Keyboard;
+import java.io.FileWriter;
+import java.io.IOException;
 public class Driver {
     public static void main(String[] args) {
 	/*
@@ -43,14 +45,22 @@ public class Driver {
     }
 
     public static void roundRobin(int k) {
-	String filename = "~/gops/RoundRobin" + k + ".csv";
 	for (int i=0; i<5; i++) {
 	    for (int j=i+1; j<5; j++) {
-		Player p1 = initStrat(i);
-		Player p2 = initStrat(j);
-		Game game = new Game(p1, p2);
-		game.run();
-		game.record(filename,i,j);
+		String filename = "S" + i + "S" + j + ".csv";
+		try {
+		    FileWriter writer = new FileWriter(filename);
+		    writer.append("S"+i + "," + "S"+j + ",R\n");
+		    for (int r=0; r<10; r++) {
+			Player p1 = initStrat(i);
+			Player p2 = initStrat(j);
+			Game game = new Game(p1, p2);
+			writer.append(game.run());
+		    }
+		}
+		catch(Exception e) {
+		    System.out.println("Error.");
+		}
 	    }
 	}
     }
