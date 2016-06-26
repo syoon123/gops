@@ -21,4 +21,30 @@ public class Driver {
 	    game.run();
 	}
     }
+
+    public static Player initStrat(int s) {
+	Player ret;
+	if (s==0)
+	    ret = new Strat0();
+	if (s==1)
+	    ret = new Strat1();
+	if (s==2)
+	    ret = new Strat2();
+	if (s==3)
+	    ret = new Strat3();
+	if (s==4)
+	    ret = new Strat4();
+	return ret;
+    }
+
+    public static void roundRobin() {
+	for (int i=0; i<5; i++) {
+	    for (int j=i+1; j<5; j++) {
+		Player p1 = initStrat(i);
+		Player p2 = initStrat(j);
+		Game game = new Game(p1, p2);
+		game.run();
+	    }
+	}
+    }
 }
