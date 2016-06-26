@@ -1,28 +1,27 @@
 import cs1.Keyboard;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 public class Driver {
     public static void main(String[] args) {
 	/*
-	System.out.println("Please type in the integer corresponding to the strategy for Player 1.");
-	System.out.println("1. User" + "\n" + "2. x" + "\n" + "3. x+1");
-	int strat1 = Keyboard.readInt();
-	System.out.println("Please type in the integer corresponding to the strategy for Player 2.");
-	System.out.println("1. User" + "\n" + "2. x" + "\n"  + "3. x+1");
-	int strat2 = Keyboard.readInt();
-	System.out.println("How many times do you want the game to run?");
-	int n = Keyboard.readInt();
-	for (int i = 0; i < n; i++) {	    
-	    Player p1, p2;
-	    if (strat1 == 1)  p1 = new User();
-	    else if (strat1 == 2) p1 = new Strat1();
-	    else p1 = new Strat2();
-	    if (strat2 == 1)  p2 = new User();
-	    else if (strat2 == 2) p2 = new Strat1();
-	    else p2 = new Strat2();
-	    Game game = new Game(p1, p2);
-	    game.run();
-	}
+	  System.out.println("Please type in the integer corresponding to the strategy for Player 1.");
+	  System.out.println("1. User" + "\n" + "2. x" + "\n" + "3. x+1");
+	  int strat1 = Keyboard.readInt();
+	  System.out.println("Please type in the integer corresponding to the strategy for Player 2.");
+	  System.out.println("1. User" + "\n" + "2. x" + "\n"  + "3. x+1");
+	  int strat2 = Keyboard.readInt();
+	  System.out.println("How many times do you want the game to run?");
+	  int n = Keyboard.readInt();
+	  for (int i = 0; i < n; i++) {	    
+	  Player p1, p2;
+	  if (strat1 == 1)  p1 = new User();
+	  else if (strat1 == 2) p1 = new Strat1();
+	  else p1 = new Strat2();
+	  if (strat2 == 1)  p2 = new User();
+	  else if (strat2 == 2) p2 = new Strat1();
+	  else p2 = new Strat2();
+	  Game game = new Game(p1, p2);
+	  game.run();
+	  }
 	*/
 	roundRobin(0);
     }
@@ -46,17 +45,21 @@ public class Driver {
 
     public static void roundRobin(int k) {
 	for (int i=0; i<5; i++) {
-	    for (int j=i+1; j<5; j++) {
-		String filename = "tables/" + "S" + i + "S" + j + ".csv";
+	    for (int j=i+1; j<5; j++) {		
 		try {
+		    String filename = "tables/" + "S" + i + "S" + j + ".csv";
+		    File file = new File(filename);
+		    file.createNewFile();
 		    FileWriter writer = new FileWriter(filename,true);
-		    writer.append("S"+i + "," + "S"+j + ",R\n");
+		    writer.write("S"+i + "," + "S"+j + ",R\n");
 		    for (int r=0; r<10; r++) {
 			Player p1 = initStrat(i);
 			Player p2 = initStrat(j);
 			Game game = new Game(p1, p2);
 			writer.append(game.run());
 		    }
+		    writer.flush();
+		    writer.close();
 		}
 		catch(Exception e) {
 		    System.out.println("Error.");
