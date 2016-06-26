@@ -1,5 +1,4 @@
 import cs1.Keyboard;
-import java.io.FileWriter;
 public class Driver {
     public static void main(String[] args) {
 	System.out.println("Please type in the integer corresponding to the strategy for Player 1.");
@@ -41,15 +40,14 @@ public class Driver {
     }
 
     public static void roundRobin(int k) {
-	//make new csv file
-	FileWriter writer = new FileWriter("~/gops/RoundRobin" + k + ".csv");
+	String filename = "~/gops/RoundRobin" + k + ".csv";
 	for (int i=0; i<5; i++) {
 	    for (int j=i+1; j<5; j++) {
 		Player p1 = initStrat(i);
 		Player p2 = initStrat(j);
 		Game game = new Game(p1, p2);
 		game.run();
-		game.record();
+		game.record(filename,i,j);
 	    }
 	}
     }
