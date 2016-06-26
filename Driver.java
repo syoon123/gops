@@ -47,9 +47,9 @@ public class Driver {
     public static void roundRobin(int k) {
 	for (int i=0; i<5; i++) {
 	    for (int j=i+1; j<5; j++) {
-		String filename = "S" + i + "S" + j + ".csv";
+		String filename = "tables/" + "S" + i + "S" + j + ".csv";
 		try {
-		    FileWriter writer = new FileWriter(filename);
+		    FileWriter writer = new FileWriter(filename,true);
 		    writer.append("S"+i + "," + "S"+j + ",R\n");
 		    for (int r=0; r<10; r++) {
 			Player p1 = initStrat(i);
