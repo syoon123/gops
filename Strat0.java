@@ -1,6 +1,6 @@
 //test strategy: matches bid
-public class Strat1 extends Player {
-    public Strat1() {
+public class Strat0 extends Player {
+    public Strat0() {
 	super();
     }
     public int makeMove(){
