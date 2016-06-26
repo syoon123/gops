@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.lang.Math;
+import java.io.FileWriter;
+import java.io.IOException;
 public class Game {
     //inst vars
     private Player _p1, _p2, _r;
@@ -78,5 +80,17 @@ public class Game {
 	System.out.println
 	    ("The random player's score is " + _r.getScore() + ".");
 	System.out.println(); 
+    }
+    public void record(String filename, int i, int j) {
+	try {
+	    FileWriter writer = new FileWriter(filename);
+	    writer.append(i + "," + j + ",R" + "\n");
+	    writer.append(_p1.getScore() + "," + _p2.getScore() + "," + _r.getScore());
+	    writer.append("\n");
+	    System.out.println("CSV created.");
+	}
+	catch (Exception e) {
+	    System.out.println("Error.");
+	}
     }
 }
