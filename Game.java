@@ -84,5 +84,16 @@ public class Game {
 	    ("The random player's score is " + _r.getScore() + ".");
 	System.out.println(); 
     }
-    
+    public void record(String filename, int i, int j) {
+	try {
+	    FileWriter writer = new FileWriter(filename);
+	    writer.append(i + "," + j + ",R" + "\n");
+	    writer.append(_p1.getScore() + "," + _p2.getScore() + "," + _r.getScore());
+	    writer.append("\n");
+	    System.out.println("CSV created.");
+	}
+	catch (Exception e) {
+	    System.out.println("Error.");
+	}
+    }
 }
