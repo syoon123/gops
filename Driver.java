@@ -34,6 +34,8 @@ public class Driver {
 	    ret = new Strat3();
 	if (s==4)
 	    ret = new Strat4();
+	else
+	    ret = new RandomPlayer();
 	return ret;
     }
 
