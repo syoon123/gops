@@ -83,7 +83,7 @@ public class Game {
     }
     public void record(String filename, int i, int j) {
 	try {
-	    FileWriter writer = new FileWriter(filename);
+	    FileWriter writer = new FileWriter(filename, true);
 	    writer.append(i + "," + j + ",R" + "\n");
 	    writer.append(_p1.getScore() + "," + _p2.getScore() + "," + _r.getScore());
 	    writer.append("\n");
