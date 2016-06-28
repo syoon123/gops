@@ -42,7 +42,7 @@ public class ScoreChart {
 	    retStr += "\n";
 	}
 
-	retStr += "\n";
+	retStr += "\n,";
 	for (int i=0; i<_vd.length; i++) {
 	    retStr += "S" + i + ",";
 	}
