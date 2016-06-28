@@ -44,27 +44,27 @@ public class Driver {
     }
 
     public static void roundRobin(int k) {
+	ScoreChart scores = new ScoreChart(k);
 	for (int i=0; i<5; i++) {
 	    for (int j=i+1; j<5; j++) {		
-		try {
-		    String filename = "tables/" + "S" + i + "S" + j + ".csv";
-		    File file = new File(filename);
-		    file.createNewFile();
-		    FileWriter writer = new FileWriter(filename,true);
-		    writer.write("S"+i + "," + "S"+j + ",R\n");
-		    for (int r=0; r<10; r++) {
-			Player p1 = initStrat(i);
-			Player p2 = initStrat(j);
-			Game game = new Game(p1, p2);
-			writer.append(game.run());
-		    }
-		    writer.flush();
-		    writer.close();
-		}
-		catch(Exception e) {
-		    System.out.println("Error.");
-		}
+		    Player p1 = initStrat(i);
+		    Player p2 = initStrat(j);
+		    Game game = new Game(p1, p2);
+		    game.run();
+		    scores.append(i,p1.getScore(),j,p2.getScore());
 	    }
+	}
+	try {
+	    String filename = "tables/RoundRobin" + k + "x" + k + ".csv";
+	    File file = new File(filename);
+	    file.createNewFile();
+	    FileWriter writer = new FileWriter(filename);
+	    writer.write(scores.toString());
+	    writer.flush();
+	    writer.close();
+	}
+	catch (Exception e) {
+	    System.out.println("Error.");
 	}
     }
 }
