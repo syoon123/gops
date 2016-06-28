@@ -23,7 +23,7 @@ public class Driver {
 	  game.run();
 	  }
 	*/
-	roundRobin(0);
+	roundRobin(5);
     }
 
     public static Player initStrat(int s) {
@@ -45,8 +45,8 @@ public class Driver {
 
     public static void roundRobin(int k) {
 	ScoreChart scores = new ScoreChart(k);
-	for (int i=0; i<5; i++) {
-	    for (int j=i+1; j<5; j++) {		
+	for (int i=0; i<k; i++) {
+	    for (int j=i+1; j<k; j++) {		
 		    Player p1 = initStrat(i);
 		    Player p2 = initStrat(j);
 		    Game game = new Game(p1, p2);
